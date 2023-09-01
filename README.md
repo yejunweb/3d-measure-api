@@ -2,9 +2,11 @@
 
 ## Start
 
+```
 npm install
 npm install nodemon
 nodemon .\bin\www
+```
 
 ## View service
 
