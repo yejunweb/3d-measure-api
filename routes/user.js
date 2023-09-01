@@ -5,6 +5,7 @@ const md5 = require('../utils/md5')
 const User = require('../models/userModel')
 const Department = require('../models/departmentModel')
 const Action = require('../models/actionModel')
+const Role = require('../models/roleModel')
 const RoleActionRel = require('../models/roleActionRelModel')
 
 /**
@@ -51,10 +52,11 @@ const getActions = (role_id) => {
 router.post('/page', (req, res) => {
     let departmentMap
     let departmentIds
+    let roleMap
     const { current, pageSize, departmentLevel, realName } = req.body
     Department.findAll()
         .then((rows) => {
-            // 获取所有角色 id 对应名称、等级
+            // 获取所有机构 id 对应名称、等级
             departmentMap = rows.reduce((prev, cur) => {
                 prev[cur.id] = {
                     departmentName: cur.name,
@@ -68,6 +70,14 @@ router.post('/page', (req, res) => {
                     .filter((v) => v.departmentLevel === departmentLevel)
                     .map((v) => v.id)
             }
+            return Role.findAll()
+        })
+        .then((rows) => {
+            // 获取所有权限 id 对应名称
+            roleMap = rows.reduce((prev, cur) => {
+                prev[cur.id] = cur.roleName
+                return prev
+            }, {})
             return User.findAndCountAll({
                 offset: (current - 1) * pageSize,
                 limit: pageSize,
@@ -91,6 +101,7 @@ router.post('/page', (req, res) => {
                 records: rows.map((v) => ({
                     ...v.dataValues,
                     ...departmentMap[v.dataValues?.departmentId?.toString()],
+                    roleName: roleMap?.[v.roleId]
                 })),
                 current: current,
                 size: pageSize,
