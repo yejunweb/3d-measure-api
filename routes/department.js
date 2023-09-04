@@ -1,3 +1,4 @@
+const { Op } = require('sequelize')
 const express = require('express')
 const router = express.Router()
 const Department = require('../models/departmentModel')
@@ -17,6 +18,21 @@ const treeConstructor = (origin, pid = 0) => {
                 children: treeConstructor(origin, v.id),
             }),
         }))
+}
+
+/**
+ * @param origin [Array]  源数据
+ * @param pid    [Number] 父级节点
+ */
+const getChildIds = (origin, pid) => {
+    const childIds = []
+    const childList = origin.filter((v) => v.parentId === pid)
+    if (childList.length) {
+        childList.forEach((v) => {
+            childIds.push(...getChildIds(origin, v.id))
+        })
+    }
+    return [pid, ...childIds]
 }
 
 /**
@@ -126,11 +142,18 @@ router.post('/set', async (req, res) => {
  * @param id [Number] 单位ID
  */
 router.post('/del/:id', (req, res) => {
-    Department.destroy({
-        where: {
-            id: req.params.id,
-        },
-    })
+    Department.findAll()
+        .then((rows) => {
+            // 删除机构及其所有关联子机构
+            const deleteIds = getChildIds(rows, Number(req.params.id))
+            return Department.destroy({
+                where: {
+                    id: {
+                        [Op.in]: deleteIds,
+                    },
+                },
+            })
+        })
         .then(() => {
             res.sendResult(200, null, '删除成功')
         })
