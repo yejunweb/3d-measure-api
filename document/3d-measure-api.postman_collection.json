@@ -1,0 +1,960 @@
+{
+	"info": {
+		"_postman_id": "de1b0da9-e0f5-4487-9115-65e45fe68fc1",
+		"name": "3d-measure-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "通用接口",
+			"item": [
+				{
+					"name": "登录",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"cd666888\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "退出登录",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzc5NDI4MSwiZXhwIjoxNjkzODMwMjgxfQ.ku1nSDuQYkXZvTcKAY_i7w7Yl2bIH96NJHp5cwRr5AA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "文件上传",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzc5NjIyOSwiZXhwIjoxNjkzODMyMjI5fQ.PD3B3_J89cM6Eizt5OZqh1qYSqDNbJl-OCIbZFQ5UYQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/common/upload/multiple",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"common",
+								"upload",
+								"multiple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "文件批量上传",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzc5NjIyOSwiZXhwIjoxNjkzODMyMjI5fQ.PD3B3_J89cM6Eizt5OZqh1qYSqDNbJl-OCIbZFQ5UYQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Administrator/Pictures/Camera Roll/300.gif"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/common/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"common",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "账号管理",
+			"item": [
+				{
+					"name": "账号管理-用户列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzc5NDI4MSwiZXhwIjoxNjkzODMwMjgxfQ.ku1nSDuQYkXZvTcKAY_i7w7Yl2bIH96NJHp5cwRr5AA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"current\": 1,\r\n    \"pageSize\": 10,\r\n    \"realName\": \"\",\r\n    \"departmentLevel\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/user/page",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"user",
+								"page"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "账号管理-用户信息",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/user/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"user",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "账号管理-新增、编辑用户",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"\",\r\n    \"username\": \"测试\",\r\n    \"realName\": \"测试1\",\r\n    \"departmentId\": 106,\r\n    \"roleId\": 42,\r\n    \"birthday\": \"2023-08-21T16:00:00.000Z\",\r\n    \"iDCard\": \"\",\r\n    \"password\": \"123\",\r\n    \"userStatus\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/user/set",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"user",
+								"set"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "账号管理-删除用户",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/user/del/144",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"user",
+								"del",
+								"144"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "角色管理",
+			"item": [
+				{
+					"name": "角色管理-角色列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"current\": 1,\r\n    \"pageSize\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/role/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"role",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "角色管理-角色详情",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/role/get/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"role",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "角色管理-新增、编辑角色",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 46,\r\n    \"roleName\": \"操作员2\",\r\n    \"departmentLevel\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/role/set",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"role",
+								"set"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "角色管理-删除角色",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/role/del/45",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"role",
+								"del",
+								"45"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "单位管理",
+			"item": [
+				{
+					"name": "单位管理-树形列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8880/department/treeList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"department",
+								"treeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "单位管理-单位详情",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/department/get/105",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"department",
+								"get",
+								"105"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "单位管理-新增、编辑单位",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"\",\r\n  \"name\": \"安徽医院1\",\r\n  \"departmentLevel\": 1,\r\n  \"parentId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/department/set",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"department",
+								"set"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "单位管理-删除单位",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/department/del/132",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"department",
+								"del",
+								"132"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "角色权限",
+			"item": [
+				{
+					"name": "权限管理-权限列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8880/action/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"action",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "角色权限管理-角色对应权限列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8880/roleAction/get/42",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"roleAction",
+								"get",
+								"42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "角色权限管理-编辑角色对应权限",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5MzU0ODMyOSwiZXhwIjoxNjkzNTg0MzI5fQ.gen8mx-q6PhQDdcODQ0_o3Zb-EfJb-VqJePhDQoek1k"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleId\": 42,\r\n    \"actions\": [\r\n        6,\r\n        5,\r\n        4\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/roleAction/set",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"roleAction",
+								"set"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "国标参数配置",
+			"item": [
+				{
+					"name": "国标参数配置-测量项目列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzc5NjIyOSwiZXhwIjoxNjkzODMyMjI5fQ.PD3B3_J89cM6Eizt5OZqh1qYSqDNbJl-OCIbZFQ5UYQ"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8880/measureItem/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"measureItem",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "国标参数配置-新增、编辑测量项目",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzc5NjIyOSwiZXhwIjoxNjkzODMyMjI5fQ.PD3B3_J89cM6Eizt5OZqh1qYSqDNbJl-OCIbZFQ5UYQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 16,\r\n    \"item\": \"UFH/mm\",\r\n    \"avg\": \"0\",\r\n    \"std\": 0,\r\n    \"remark\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/measureItem/set",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"measureItem",
+								"set"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "国标参数配置-删除测量项目",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzc5NjIyOSwiZXhwIjoxNjkzODMyMjI5fQ.PD3B3_J89cM6Eizt5OZqh1qYSqDNbJl-OCIbZFQ5UYQ"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8880/measureItem/del/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"measureItem",
+								"del",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "患者管理",
+			"item": [
+				{
+					"name": "患者管理-患者列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzc5NjIyOSwiZXhwIjoxNjkzODMyMjI5fQ.PD3B3_J89cM6Eizt5OZqh1qYSqDNbJl-OCIbZFQ5UYQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"current\": 1,\r\n    \"pageSize\": 10,\r\n    \"name\": \"\",\r\n    \"phone\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/patient/page",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"patient",
+								"page"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "患者管理-患者详情",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzc5NjIyOSwiZXhwIjoxNjkzODMyMjI5fQ.PD3B3_J89cM6Eizt5OZqh1qYSqDNbJl-OCIbZFQ5UYQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/patient/get/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"patient",
+								"get",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "患者管理-新增、编辑患者",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzc5NjIyOSwiZXhwIjoxNjkzODMyMjI5fQ.PD3B3_J89cM6Eizt5OZqh1qYSqDNbJl-OCIbZFQ5UYQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"\",\r\n    \"name\": \"小明\",\r\n    \"headImg\": \"/uploads/1693814822036.gif\",\r\n    \"sex\": \"男\",\r\n    \"birthday\": \"2023-09-25\",\r\n    \"phone\": \"13966666666\",\r\n    \"address\": \"浙江杭州\",\r\n    \"picture\": \"/uploads/1693814837498.gif\",\r\n    \"model\": \"/uploads/1693814847435.gif\",\r\n    \"record\": \"这是备注\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/patient/set",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"patient",
+								"set"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "患者管理-删除患者",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzc5NjIyOSwiZXhwIjoxNjkzODMyMjI5fQ.PD3B3_J89cM6Eizt5OZqh1qYSqDNbJl-OCIbZFQ5UYQ"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8880/patient/del/19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"patient",
+								"del",
+								"19"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "测量记录管理",
+			"item": [
+				{
+					"name": "测量记录管理-记录列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzc5NjIyOSwiZXhwIjoxNjkzODMyMjI5fQ.PD3B3_J89cM6Eizt5OZqh1qYSqDNbJl-OCIbZFQ5UYQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patientId\": 22\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/treatment/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"treatment",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
