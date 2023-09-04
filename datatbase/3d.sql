@@ -463,26 +463,29 @@ CREATE TABLE `cd_patient` (
   `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '地址',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `department_id` int(11) DEFAULT NULL COMMENT '单位跟随系统用户',
+  `picture` text COLLATE utf8mb4_unicode_ci COMMENT '图片',
+  `model` text COLLATE utf8mb4_unicode_ci COMMENT '3d模型',
+  `record` text COLLATE utf8mb4_unicode_ci COMMENT '备注',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='患者表';
 
 -- ----------------------------
 -- Records of cd_patient
 -- ----------------------------
-INSERT INTO cd_patient VALUES ('4', '长鑫', '男', '1999-05-12 00:00:00', '18222222222', null, '河南信阳', '2021-08-11 11:34:44', null);
-INSERT INTO cd_patient VALUES ('6', '戴文源', '男', '2021-08-30 00:00:00', '13888889999', '/uploads/tank/2021/10/15/fe9c08b8dd4043f8be3f49edeafc997a.jpeg', '安徽', '2021-08-30 10:23:59', null);
-INSERT INTO cd_patient VALUES ('8', '测试患者1', '男', '2021-09-01 00:00:00', '13988882222', '/uploads/tank/2021/10/14/49ea4a3b999746e89984f8d307d02023.ico', '测试地址', '2021-09-13 10:10:28', null);
-INSERT INTO cd_patient VALUES ('9', '小戴', '男', '1984-03-01 00:00:00', '13912341234', '/uploads/tank/2021/9/18/73dca0a42506474baf525bb2ae1f197d.jpg', '2333', '2021-09-18 11:49:03', null);
-INSERT INTO cd_patient VALUES ('10', 'cc', '女', '1982-11-22 00:00:00', '13520922853', '/uploads/tank/2021/10/16/ad73f5f84bf84938b5acbe77d4c6bdc8.jpg', '北京', '2021-10-16 22:19:48', null);
-INSERT INTO cd_patient VALUES ('12', '球球', '女', '2008-08-08 00:00:00', '13888888888', '/uploads/tank/2021/10/19/0d49c7b04099474caf819d017365bc36.jpg', '蚌埠', '2021-10-19 14:32:37', null);
-INSERT INTO cd_patient VALUES ('14', '测试', '男', '2021-10-03 00:00:00', '13866556666', '/uploads/tank/2021/10/26/3ed22892ae3e4d878daeb125749f1b03.jpeg', '1', '2021-10-26 16:49:17', null);
-INSERT INTO cd_patient VALUES ('15', '毛毛', '女', '2000-01-01 00:00:00', '13811112222', '/uploads/tank/2021/10/28/dcc5bef381a1409999cb996a680cf9d3.jpg', '安徽省合肥市蜀山区', '2021-10-28 17:17:12', null);
-INSERT INTO cd_patient VALUES ('16', '俊俊', '男', '2021-11-04 00:00:00', '13822225555', '', '合肥市', '2021-11-04 09:24:49', null);
-INSERT INTO cd_patient VALUES ('17', 'p1', '男', '2010-07-08 00:00:00', '13512345678', '/uploads/tank/2021/11/4/8dd619cf3f4b4a448be2f280964be40b.jpg', '合肥', '2021-11-04 15:11:54', '105');
-INSERT INTO cd_patient VALUES ('18', '老吴', '男', '2021-11-01 00:00:00', '13844445555', '', '合肥', '2021-11-04 17:00:18', '109');
-INSERT INTO cd_patient VALUES ('19', '125', '男', '2021-11-02 00:00:00', '13344445555', '', 'dd', '2021-11-05 10:14:02', '122');
-INSERT INTO cd_patient VALUES ('20', '000', '男', '2021-11-02 00:00:00', '13855558888', '', '合肥', '2021-11-10 09:25:17', '105');
-INSERT INTO cd_patient VALUES ('21', '1', '男', '2021-11-01 00:00:00', '13844446666', '', 'beng', '2021-11-12 17:38:07', '129');
+INSERT INTO cd_patient VALUES ('4', '长鑫', '男', '1999-05-12 00:00:00', '18222222222', null, '河南信阳', '2021-08-11 11:34:44', null, null, null, null);
+INSERT INTO cd_patient VALUES ('6', '戴文源', '男', '2021-08-30 00:00:00', '13888889999', '/uploads/tank/2021/10/15/fe9c08b8dd4043f8be3f49edeafc997a.jpeg', '安徽', '2021-08-30 10:23:59', null, null, null, null);
+INSERT INTO cd_patient VALUES ('8', '测试患者1', '男', '2021-09-01 00:00:00', '13988882222', '/uploads/tank/2021/10/14/49ea4a3b999746e89984f8d307d02023.ico', '测试地址', '2021-09-13 10:10:28', null, null, null, null);
+INSERT INTO cd_patient VALUES ('9', '小戴', '男', '1984-03-01 00:00:00', '13912341234', '/uploads/tank/2021/9/18/73dca0a42506474baf525bb2ae1f197d.jpg', '2333', '2021-09-18 11:49:03', null, null, null, null);
+INSERT INTO cd_patient VALUES ('10', 'cc', '女', '1982-11-22 00:00:00', '13520922853', '/uploads/tank/2021/10/16/ad73f5f84bf84938b5acbe77d4c6bdc8.jpg', '北京', '2021-10-16 22:19:48', null, null, null, null);
+INSERT INTO cd_patient VALUES ('12', '球球', '女', '2008-08-08 00:00:00', '13888888888', '/uploads/tank/2021/10/19/0d49c7b04099474caf819d017365bc36.jpg', '蚌埠', '2021-10-19 14:32:37', null, null, null, null);
+INSERT INTO cd_patient VALUES ('14', '测试', '男', '2021-10-03 00:00:00', '13866556666', '/uploads/tank/2021/10/26/3ed22892ae3e4d878daeb125749f1b03.jpeg', '1', '2021-10-26 16:49:17', null, null, null, null);
+INSERT INTO cd_patient VALUES ('15', '毛毛', '女', '2000-01-01 00:00:00', '13811112222', '/uploads/tank/2021/10/28/dcc5bef381a1409999cb996a680cf9d3.jpg', '安徽省合肥市蜀山区', '2021-10-28 17:17:12', null, null, null, null);
+INSERT INTO cd_patient VALUES ('16', '俊俊', '男', '2021-11-04 00:00:00', '13822225555', '', '合肥市', '2021-11-04 09:24:49', null, null, null, null);
+INSERT INTO cd_patient VALUES ('17', 'p1', '男', '2010-07-08 00:00:00', '13512345678', '/uploads/tank/2021/11/4/8dd619cf3f4b4a448be2f280964be40b.jpg', '合肥', '2021-11-04 15:11:54', '105', null, null, null);
+INSERT INTO cd_patient VALUES ('18', '老吴', '男', '2021-11-01 00:00:00', '13844445555', '', '合肥', '2021-11-04 17:00:18', '109', null, null, null);
+INSERT INTO cd_patient VALUES ('19', '125', '男', '2021-11-02 00:00:00', '13344445555', '', 'dd', '2021-11-05 10:14:02', '122', null, null, null);
+INSERT INTO cd_patient VALUES ('20', '000', '男', '2021-11-02 00:00:00', '13855558888', '', '合肥', '2021-11-10 09:25:17', '105', null, null, null);
+INSERT INTO cd_patient VALUES ('21', '1', '男', '2021-11-01 00:00:00', '13844446666', '', 'beng', '2021-11-12 17:38:07', '129', null, null, null);
 
 -- ----------------------------
 -- Table structure for `cd_role`
