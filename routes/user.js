@@ -101,7 +101,7 @@ router.post('/page', (req, res) => {
                 records: rows.map((v) => ({
                     ...v.dataValues,
                     ...departmentMap[v.dataValues?.departmentId?.toString()],
-                    roleName: roleMap?.[v.roleId]
+                    roleName: roleMap?.[v.roleId],
                 })),
                 current: current,
                 size: pageSize,
@@ -146,7 +146,7 @@ router.post('/set', async (req, res) => {
         // 用户名重复检查
         const result = await User.findAll({
             where: {
-                username: username,
+                username,
             },
         })
         if (result.length) return res.sendResult(502, null, '用户名重复')
@@ -173,6 +173,16 @@ router.post('/set', async (req, res) => {
                 )
             })
     } else {
+        // 用户名重复检查
+        const result = await User.findAll({
+            where: {
+                id: {
+                    [Op.ne]: id,
+                },
+                username,
+            },
+        })
+        if (result.length) return res.sendResult(502, null, '用户名重复')
         // 编辑用户
         User.update(
             {

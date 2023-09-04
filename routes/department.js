@@ -111,6 +111,16 @@ router.post('/set', async (req, res) => {
                 )
             })
     } else {
+        // 单位名重复检查
+        const result = await Department.findAll({
+            where: {
+                id: {
+                    [Op.ne]: id,
+                },
+                name,
+            },
+        })
+        if (result.length) return res.sendResult(502, null, '单位名重复')
         // 编辑单位
         Department.update(
             {

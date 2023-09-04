@@ -85,6 +85,16 @@ router.post('/set', async (req, res) => {
                 )
             })
     } else {
+        // 角色名重复检查
+        const result = await Role.findAll({
+            where: {
+                id: {
+                    [Op.ne]: id,
+                },
+                roleName,
+            },
+        })
+        if (result.length) return res.sendResult(502, null, '角色名重复')
         // 编辑角色
         Role.update(
             {

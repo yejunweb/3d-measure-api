@@ -56,6 +56,16 @@ router.post('/set', async (req, res) => {
                 )
             })
     } else {
+        // 测量项目重复检查
+        const result = await MeasureItem.findAll({
+            where: {
+                id: {
+                    [Op.ne]: id,
+                },
+                item,
+            },
+        })
+        if (result.length) return res.sendResult(502, null, '测量项目重复')
         // 编辑测量项目
         MeasureItem.update(
             {
