@@ -28,7 +28,7 @@ app.use(response)
 /**
  * 开放目录
  */
-app.use('/', express.static('./uploads'))
+app.use('/uploads', express.static('./uploads'))
 
 /**
  * 设置请求头
@@ -52,7 +52,7 @@ admin_passport.initialize(app)
 app.use('/login', admin_passport.login)
 app.use('/logout', admin_passport.logout)
 // 去除公共接口验证
-app.use(/^(?!.*(login|common)).*$/, admin_passport.tokenVerify)
+app.use(/^(?!.*(login)).*$/, admin_passport.tokenVerify)
 
 /**
  * 路由加载

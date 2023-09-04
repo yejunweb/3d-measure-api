@@ -5,7 +5,7 @@ const User = require('../models/userModel')
 const md5 = require('../utils/md5')
 const jwt = require('jsonwebtoken')
 const CONFIG = require('../config/app.config')
-const getActions = require('../routes/user').getActions
+const { getActions } = require('../routes/user')
 
 /**
  * 用户名、密码数据库验证

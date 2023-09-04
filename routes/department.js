@@ -177,3 +177,4 @@ router.post('/del/:id', (req, res) => {
 })
 
 module.exports = router
+module.exports.getChildIds = getChildIds
