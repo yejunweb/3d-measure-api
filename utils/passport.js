@@ -89,6 +89,14 @@ module.exports.login = (req, res, next) => {
 }
 
 /**
+ * 退出登录逻辑
+ */
+module.exports.logout = (req, res, next) => {
+    req.logout()
+    res.sendResult(200, null, '退出登录成功')
+}
+
+/**
  * 接口请求拦截验证
  */
 module.exports.tokenVerify = (req, res, next) => {
