@@ -865,7 +865,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"\",\r\n    \"name\": \"小明\",\r\n    \"headImg\": \"/uploads/1693814822036.gif\",\r\n    \"sex\": \"男\",\r\n    \"birthday\": \"2023-09-25\",\r\n    \"phone\": \"13966666666\",\r\n    \"address\": \"浙江杭州\",\r\n    \"picture\": \"/uploads/1693814837498.gif\",\r\n    \"model\": \"/uploads/1693814847435.gif\",\r\n    \"record\": \"这是备注\"\r\n}",
+							"raw": "{\r\n    \"id\": \"\",\r\n    \"name\": \"叶俊\",\r\n    \"headImg\": \"/uploads/1693814822036.gif\",\r\n    \"sex\": \"男\",\r\n    \"birthday\": \"2023-09-25\",\r\n    \"phone\": \"13966666666\",\r\n    \"address\": \"浙江杭州\",\r\n    \"picture\": \"/uploads/1693814837498.gif\",\r\n    \"model\": \"/uploads/1693814847435.gif\",\r\n    \"record\": \"这是备注\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -949,6 +949,104 @@
 							"path": [
 								"treatment",
 								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "测量记录管理-记录详情",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzg3ODQ5NCwiZXhwIjoxNjkzOTE0NDk0fQ.NrGxGJrHe9Yb6WU0QuXf3iYjO5ZFJ60P0cJLcqjIFLY"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patientId\": 22\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/treatment/get/90",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"treatment",
+								"get",
+								"90"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "测量记录管理-删除记录",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzg3ODQ5NCwiZXhwIjoxNjkzOTE0NDk0fQ.NrGxGJrHe9Yb6WU0QuXf3iYjO5ZFJ60P0cJLcqjIFLY"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8880/treatment/del/138",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"treatment",
+								"del",
+								"138"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "测量记录管理-新增记录",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5Mzg3ODQ5NCwiZXhwIjoxNjkzOTE0NDk0fQ.NrGxGJrHe9Yb6WU0QuXf3iYjO5ZFJ60P0cJLcqjIFLY"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patientId\": \"22\",\r\n    \"measurements\": [\r\n        {\r\n            \"itemId\": 15,\r\n            \"result\": 153\r\n        },\r\n        {\r\n            \"itemId\": 16,\r\n            \"result\": \"27.0\"\r\n        },\r\n        {\r\n            \"itemId\": 17,\r\n            \"result\": \"46.2\"\r\n        }\r\n    ],\r\n    \"info\": \"[{\\\"id\\\":15,\\\"type\\\":7,\\\"positionList\\\":[{\\\"x\\\":-4.229569474443127,\\\"y\\\":-68.21964717759332,\\\"z\\\":90.14689298970507},{\\\"x\\\":-2.3671785964967675,\\\"y\\\":89.92530718351613,\\\"z\\\":76.36778943925526},{\\\"x\\\":33.74991071696388,\\\"y\\\":18.140438001962902,\\\"z\\\":86.16110584539081}],\\\"label\\\":\\\"FCA：153°\\\",\\\"labelPosition\\\":{\\\"x\\\":-8.697091961731271,\\\"y\\\":75.53195965359009,\\\"z\\\":77.03208729664097}},{\\\"id\\\":16,\\\"type\\\":4,\\\"positionList\\\":[{\\\"x\\\":-37.0396934785272,\\\"y\\\":-27.930555568436436,\\\"z\\\":85.92786356276304},{\\\"x\\\":-29.48351637126251,\\\"y\\\":27.719088010690633,\\\"z\\\":88.45104858360298},{\\\"x\\\":23.554500502582627,\\\"y\\\":-11.434107397639835,\\\"z\\\":88.95078433734193}],\\\"label\\\":\\\"UFH：27.0mm\\\",\\\"labelPosition\\\":{\\\"x\\\":-18.64201311412228,\\\"y\\\":19.71578169257322,\\\"z\\\":88.55319959001707}},{\\\"id\\\":17,\\\"type\\\":4,\\\"positionList\\\":[{\\\"x\\\":13.062458956872211,\\\"y\\\":-55.043173715138295,\\\"z\\\":86.90398878783992},{\\\"x\\\":-41.583580584134076,\\\"y\\\":-34.124650693587675,\\\"z\\\":81.70882437399297},{\\\"x\\\":34.020505770484036,\\\"y\\\":-10.579757750139889,\\\"z\\\":90.26320179515562}],\\\"label\\\":\\\"ULL：46.2mm\\\",\\\"labelPosition\\\":{\\\"x\\\":-19.63371918475682,\\\"y\\\":-27.288946941441395,\\\"z\\\":84.19238588245122}},{\\\"id\\\":4,\\\"type\\\":1,\\\"positionList\\\":[{\\\"x\\\":-64.21155614117535,\\\"y\\\":-17.47115395874,\\\"z\\\":65.52142040853448}],\\\"label\\\":\\\"Sn\\\",\\\"labelPosition\\\":{\\\"x\\\":-64.21155614117535,\\\"y\\\":-17.47115395874,\\\"z\\\":65.52142040853448}},{\\\"id\\\":5,\\\"type\\\":1,\\\"positionList\\\":[{\\\"x\\\":32.804472165267676,\\\"y\\\":-30.941878516252213,\\\"z\\\":84.50305038934965}],\\\"label\\\":\\\"UL`\\\",\\\"labelPosition\\\":{\\\"x\\\":32.804472165267676,\\\"y\\\":-30.941878516252213,\\\"z\\\":84.50305038934965}},{\\\"id\\\":6,\\\"type\\\":1,\\\"positionList\\\":[{\\\"x\\\":-33.215374434113016,\\\"y\\\":-30.65969416530679,\\\"z\\\":85.656686841041}],\\\"label\\\":\\\"LL`\\\",\\\"labelPosition\\\":{\\\"x\\\":-33.215374434113016,\\\"y\\\":-30.65969416530679,\\\"z\\\":85.656686841041}},{\\\"id\\\":7,\\\"type\\\":1,\\\"positionList\\\":[{\\\"x\\\":-51.01774304656283,\\\"y\\\":12.370845249577163,\\\"z\\\":82.03160861248085}],\\\"label\\\":\\\"UL\\\",\\\"labelPosition\\\":{\\\"x\\\":-51.01774304656283,\\\"y\\\":12.370845249577163,\\\"z\\\":82.03160861248085}},{\\\"id\\\":8,\\\"type\\\":1,\\\"positionList\\\":[{\\\"x\\\":42.94855122077506,\\\"y\\\":-20.152167439543575,\\\"z\\\":88.61458919543196}],\\\"label\\\":\\\"LL\\\",\\\"labelPosition\\\":{\\\"x\\\":42.94855122077506,\\\"y\\\":-20.152167439543575,\\\"z\\\":88.61458919543196}}]\",\r\n    \"model\": \"/uploads/1693909611781.mtl,/uploads/1693909611787.jpg,/uploads/1693909611790.obj\",\r\n    \"record\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8880/treatment/set",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8880",
+							"path": [
+								"treatment",
+								"set"
 							]
 						}
 					},
