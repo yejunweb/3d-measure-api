@@ -418,35 +418,35 @@ CREATE TABLE `cd_measure_item` (
 -- ----------------------------
 -- Records of cd_measure_item
 -- ----------------------------
-INSERT INTO cd_measure_item VALUES ('1', 'G', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('2', 'Ns', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('3', 'E', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('4', 'Sn', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('5', 'UL`', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('6', 'LL`', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('7', 'UL', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('8', 'LL', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('9', 'Pos', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('10', 'Mes', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('11', 'K', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('12', 'H线', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('13', 'E线', '0.00', '0.0', '');
+INSERT INTO cd_measure_item VALUES ('1', 'G', '', '', '');
+INSERT INTO cd_measure_item VALUES ('2', 'Ns', '', '', '');
+INSERT INTO cd_measure_item VALUES ('3', 'E', '', '', '');
+INSERT INTO cd_measure_item VALUES ('4', 'Sn', '', '', '');
+INSERT INTO cd_measure_item VALUES ('5', 'UL`', '', '', '');
+INSERT INTO cd_measure_item VALUES ('6', 'LL`', '', '', '');
+INSERT INTO cd_measure_item VALUES ('7', 'UL', '', '', '');
+INSERT INTO cd_measure_item VALUES ('8', 'LL', '', '', '');
+INSERT INTO cd_measure_item VALUES ('9', 'Pos', '', '', '');
+INSERT INTO cd_measure_item VALUES ('10', 'Mes', '', '', '');
+INSERT INTO cd_measure_item VALUES ('11', 'K', '', '', '');
+INSERT INTO cd_measure_item VALUES ('12', 'H线', '', '', '');
+INSERT INTO cd_measure_item VALUES ('13', 'E线', '', '', '');
 INSERT INTO cd_measure_item VALUES ('14', 'NLA/°', '100.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('15', 'FCA/°', '7.30', '4.4', '');
-INSERT INTO cd_measure_item VALUES ('16', 'UFH/mm', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('17', 'ULL/mm', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('18', 'LLL/mm', '0.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('19', 'UFH/（UFH+ULL+LLL）（单位：%）', '40.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('20', 'ULL/（UFH+ULL+LLL）（单位：%）', '20.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('21', 'LLL/（UFH+ULL+LLL）（单位：%）', '40.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('22', 'ULP/mm', '7.20', '1.9', '');
-INSERT INTO cd_measure_item VALUES ('23', 'LLP/mm', '6.30', '1.5', '');
-INSERT INTO cd_measure_item VALUES ('24', 'H角/°', '11.00', '4.1', '');
-INSERT INTO cd_measure_item VALUES ('25', '鼻点-H线/mm', '1.00', '0.0', '');
-INSERT INTO cd_measure_item VALUES ('26', '鼻唇沟-H线/mm', '8.00', '0.0', '');
+INSERT INTO cd_measure_item VALUES ('15', 'FCA/°', '50.00', '4.4', '');
+INSERT INTO cd_measure_item VALUES ('16', 'UFH/mm', '40.00', '78.0', '');
+INSERT INTO cd_measure_item VALUES ('17', 'ULL/mm', '20.00', '0.0', '');
+INSERT INTO cd_measure_item VALUES ('18', 'LLL/mm', '40.00', '4.2', '');
+INSERT INTO cd_measure_item VALUES ('19', 'UFH/（UFH+ULL+LLL）（单位：%）', '7.20', '1.9', '');
+INSERT INTO cd_measure_item VALUES ('20', 'ULL/（UFH+ULL+LLL）（单位：%）', '6.30', '1.5', '');
+INSERT INTO cd_measure_item VALUES ('21', 'LLL/（UFH+ULL+LLL）（单位：%）', '1.00', '0.0', '');
+INSERT INTO cd_measure_item VALUES ('22', 'ULP/mm', '8.00', '0.0', '');
+INSERT INTO cd_measure_item VALUES ('23', 'LLP/mm', '0.00', '0.0', '');
+INSERT INTO cd_measure_item VALUES ('24', 'H角/°', '2.00', null, '');
+INSERT INTO cd_measure_item VALUES ('25', '鼻点-H线/mm', '4.00', '0.0', '');
+INSERT INTO cd_measure_item VALUES ('26', '鼻唇沟-H线/mm', '0.00', '0.0', '');
 INSERT INTO cd_measure_item VALUES ('27', '上唇突点-H线/mm', '0.00', '0.0', null);
-INSERT INTO cd_measure_item VALUES ('28', '下唇突点-H线/mm', '2.00', '0.0', null);
-INSERT INTO cd_measure_item VALUES ('29', '颏唇沟-H线/mm', '4.00', '0.0', null);
+INSERT INTO cd_measure_item VALUES ('28', '下唇突点-H线/mm', '0.00', '0.0', null);
+INSERT INTO cd_measure_item VALUES ('29', '颏唇沟-H线/mm', '0.00', '0.0', null);
 INSERT INTO cd_measure_item VALUES ('30', '颏前点-H线/mm', '0.00', '0.0', null);
 
 -- ----------------------------
