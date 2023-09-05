@@ -158,7 +158,7 @@ router.post('/del/:id', (req, res) => {
 })
 
 /**
- * 测量记录管理-新增测量记录
+ * 测量记录管理-新增记录
  * @param patientId    [Number] 患者ID
  * @param measurements [String] 测量项目
  * @param info         [String] 坐标信息
