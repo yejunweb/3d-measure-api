@@ -103,7 +103,14 @@ router.post('/get/:id', (req, res) => {
         },
     })
         .then((data) => {
-            res.sendResult(200, data)
+            const { dataValues } = data
+            res.sendResult(200, {
+                ...dataValues,
+                birthday: dayjs(dataValues.birthday).format('YYYY-MM-DD HH:mm:ss'),
+                createTime: dayjs(dataValues.createTime).format(
+                    'YYYY-MM-DD HH:mm:ss'
+                ),
+            })
         })
         .catch((error) => {
             res.sendResult(

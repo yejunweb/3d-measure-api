@@ -29,7 +29,7 @@ router.post('/get/:id', (req, res) => {
 })
 
 /**
- * 角色权限管理-角色对应权限列表
+ * 角色权限管理-编辑角色对应权限
  * @param roleId  [Number] 角色ID
  * @param actions [Array]  权限ID集合
  */
