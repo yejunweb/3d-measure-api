@@ -109,11 +109,13 @@ router.post('/get/:id', (req, res) => {
         .then((rows) => {
             const index = rows.findIndex((v) => v.id === currentTreatment.id)
             const { createTime, ...treatmentData } = currentTreatment
+            const { birthday,...patientData  } = currentPatient
             res.sendResult(200, {
                 ...treatmentData,
-                ...currentPatient,
+                ...patientData,
                 measurements: measurementList,
                 treatTime: dayjs(createTime).format('YYYY-MM-DD HH:mm:ss'),
+                birthday: dayjs(birthday).format('YYYY-MM-DD HH:mm:ss'),
                 lastId: rows[index - 1]?.id, // 上一条记录
                 nextId: rows[index + 1]?.id, // 下一条记录
             })
