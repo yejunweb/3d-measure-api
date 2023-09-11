@@ -90,7 +90,7 @@ router.post('/page', (req, res) => {
                     }),
                     ...(realName && {
                         realName: {
-                            [Op.like]: realName,
+                            [Op.like]: `%${realName}%`,
                         },
                     }),
                 },

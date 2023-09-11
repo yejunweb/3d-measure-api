@@ -47,12 +47,12 @@ router.post('/page', async (req, res) => {
                 where: {
                     ...(name && {
                         name: {
-                            [Op.like]: name,
+                            [Op.like]: `%${name}%`,
                         },
                     }),
                     ...(phone && {
                         phone: {
-                            [Op.like]: phone,
+                            [Op.like]: `%${phone}%`,
                         },
                     }),
                     /**
